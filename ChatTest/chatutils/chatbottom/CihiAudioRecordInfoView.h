@@ -18,6 +18,9 @@
 
 @property (nonatomic, assign) id<CihiAudioRecordInfoViewDelegate> deleg;
 
+- (void)setTapFrame;
+- (void)setLongPressFrame;
+
 - (void)startMessage;
 - (void)stopMessage;
 @end

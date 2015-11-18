@@ -28,18 +28,28 @@
         width      = CGRectGetWidth([UIScreen mainScreen].bounds);
         height     = CGRectGetHeight([UIScreen mainScreen].bounds);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-        self.frame = CGRectMake(0, 0, width, height);
-        self.center = CGPointMake(width/2, height/2);
         
         [self addView];
     }
     return self;
 }
 
+- (void)setLongPressFrame {
+    self.frame       = CGRectMake(0, 0, width, height);
+    self.center      = CGPointMake(width/2, height/2);
+    shadeView.center = CGPointMake(width/2, height/2);
+}
+
+- (void)setTapFrame {
+    self.frame           = shadeView.frame;
+    self.center          = CGPointMake(width/2, height/2);
+    shadeView.center     = CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2);
+}
+
 - (void)addView {
     shadeView = [[UIView alloc]init];
     shadeView.frame   = CGRectMake(0, 0, width / 2, height / 6);
-    shadeView.center  = self.center;
+    shadeView.center  = CGPointMake(width/2, height/2);
     shadeView.backgroundColor = COLOR(0, 0, 0, 0.7);
     shadeView.layer.masksToBounds = YES;
     shadeView.layer.cornerRadius = 6;
@@ -93,7 +103,7 @@
         [msgTimer invalidate];
         msgTimer = nil;
     }
-    countDownNum = 3;
+    countDownNum = 60;
     msgTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(setLabCountDownTest) userInfo:nil repeats:YES];//[NSTimer timerWithTimeInterval:1 target:self selector:@selector(setLabCountDownTest) userInfo:nil repeats:0];
 }
 

@@ -29,7 +29,6 @@
     bottomview = [[CihiBottomView alloc]initWithOutChat];
     bottomview.deleg = self;
     bottomview.control = self;
-//    [bottomview setBackgroundColor:[UIColor grayColor]];
     [self.view addSubview:bottomview];
     
     
@@ -44,8 +43,14 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)startRecordWithGesture:(UIGestureRecognizer *)gesture {
     if (!audioRecordInfo) {
-        audioRecordInfo = [[CihiAudioRecordInfoView alloc]init];
+        audioRecordInfo = [[CihiAudioRecordInfoView alloc] init];
+
         audioRecordInfo.deleg =self;
+    }
+    if ([gesture isKindOfClass:[UITapGestureRecognizer class]]) {
+        [audioRecordInfo setTapFrame];
+    } else {
+        [audioRecordInfo setLongPressFrame];
     }
     [self.view addSubview:audioRecordInfo];
     [audioRecordInfo startMessage];
@@ -60,6 +65,7 @@
 
 - (void)stopAudioRecordInfoWithNum {
     [bottomview.audioView.pressHoldOnRecord stopShowRedPoint];
+    [bottomview.audioView.tapOnRecord stopShowRedPoint];
 }
 
 - (void)didReceiveMemoryWarning {

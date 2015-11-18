@@ -122,6 +122,8 @@
         _redioPointCenterRedCircle = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
         [_redioPointCenterRedCircle setBackgroundColor:[UIColor redColor]];
         [_redioPointCenterRedCircle setCenter:CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame)/2)];
+        [_redioPointCenterRedCircle.layer setMasksToBounds:YES];
+        [_redioPointCenterRedCircle.layer setCornerRadius:CGRectGetHeight(_redioPointCenterRedCircle.frame) / 2];
         [self addSubview:_redioPointCenterRedCircle];
         
         [redioPoint setBackgroundColor:[UIColor redColor]];
