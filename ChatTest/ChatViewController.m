@@ -7,11 +7,13 @@
 //
 
 #import "ChatViewController.h"
-#import "ChatTableView.h"
-#import "CihiBottomView.h"
 
-@interface ChatViewController ()
 
+@interface ChatViewController ()<CihiBottomAudioViewDelegate, CihiAudioRecordInfoViewDelegate, CihiBottomViewDelegate>
+{
+    CihiAudioRecordInfoView *audioRecordInfo;
+    CihiBottomView *bottomview;
+}
 @end
 
 @implementation ChatViewController
@@ -24,12 +26,40 @@
     
     [self.view addSubview:tableview];
     
-    CihiBottomView *bottomview = [[CihiBottomView alloc]init];
+    bottomview = [[CihiBottomView alloc]initWithOutChat];
+    bottomview.deleg = self;
     bottomview.control = self;
-    [bottomview setBackgroundColor:[UIColor grayColor]];
+//    [bottomview setBackgroundColor:[UIColor grayColor]];
     [self.view addSubview:bottomview];
     
     
+}
+
+- (void)setAudioDelegate:(CihiBottomAudioView *)audioView {
+    audioView.pressHoldOnRecord.deleg = self;
+    audioView.tapOnRecord.deleg = self;
+}
+
+//开始录制 传送出来点击的手势
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)startRecordWithGesture:(UIGestureRecognizer *)gesture {
+    if (!audioRecordInfo) {
+        audioRecordInfo = [[CihiAudioRecordInfoView alloc]init];
+        audioRecordInfo.deleg =self;
+    }
+    [self.view addSubview:audioRecordInfo];
+    [audioRecordInfo startMessage];
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//结束录制 结束录制
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)stopRecordWithGesture:(UIGestureRecognizer *)gesture {
+    [audioRecordInfo stopMessage];
+    [audioRecordInfo removeFromSuperview];
+}
+
+- (void)stopAudioRecordInfoWithNum {
+    [bottomview.audioView.pressHoldOnRecord stopShowRedPoint];
 }
 
 - (void)didReceiveMemoryWarning {

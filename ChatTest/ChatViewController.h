@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatTableView.h"
+#import "CihiBottomView.h"
+#import "CihiAudioRecordInfoView.h"
 
 @interface ChatViewController : UIViewController
 

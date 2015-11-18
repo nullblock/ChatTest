@@ -15,7 +15,11 @@
 		030E25F71BEC60BB00059FBC /* ChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030E25F61BEC60BB00059FBC /* ChatTableView.m */; };
 		030E25FA1BEC669300059FBC /* CihiBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030E25F91BEC669300059FBC /* CihiBottomView.m */; };
 		030E25FD1BEC699800059FBC /* chatimg.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030E25FC1BEC699800059FBC /* chatimg.xcassets */; };
+		032668C31BF194AE00F8F930 /* CihiBottomAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032668C21BF194AE00F8F930 /* CihiBottomAudioView.m */; };
+		032668C61BF194B800F8F930 /* CihiBottomFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032668C51BF194B800F8F930 /* CihiBottomFaceView.m */; };
+		032668C91BF194C300F8F930 /* CihiBottomAddtionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032668C81BF194C300F8F930 /* CihiBottomAddtionView.m */; };
 		0351F5671BECAD2900F7E968 /* CihiTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0351F5661BECAD2900F7E968 /* CihiTextView.m */; };
+		03CE32C61BFC62A1005B6ED6 /* CihiAudioRecordInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CE32C51BFC62A1005B6ED6 /* CihiAudioRecordInfoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +37,16 @@
 		030E25F81BEC669300059FBC /* CihiBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CihiBottomView.h; sourceTree = "<group>"; };
 		030E25F91BEC669300059FBC /* CihiBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CihiBottomView.m; sourceTree = "<group>"; };
 		030E25FC1BEC699800059FBC /* chatimg.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = chatimg.xcassets; sourceTree = "<group>"; };
+		032668C11BF194AE00F8F930 /* CihiBottomAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CihiBottomAudioView.h; sourceTree = "<group>"; };
+		032668C21BF194AE00F8F930 /* CihiBottomAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CihiBottomAudioView.m; sourceTree = "<group>"; };
+		032668C41BF194B800F8F930 /* CihiBottomFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CihiBottomFaceView.h; sourceTree = "<group>"; };
+		032668C51BF194B800F8F930 /* CihiBottomFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CihiBottomFaceView.m; sourceTree = "<group>"; };
+		032668C71BF194C300F8F930 /* CihiBottomAddtionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CihiBottomAddtionView.h; sourceTree = "<group>"; };
+		032668C81BF194C300F8F930 /* CihiBottomAddtionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CihiBottomAddtionView.m; sourceTree = "<group>"; };
 		0351F5651BECAD2900F7E968 /* CihiTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CihiTextView.h; sourceTree = "<group>"; };
 		0351F5661BECAD2900F7E968 /* CihiTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CihiTextView.m; sourceTree = "<group>"; };
+		03CE32C41BFC62A1005B6ED6 /* CihiAudioRecordInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CihiAudioRecordInfoView.h; sourceTree = "<group>"; };
+		03CE32C51BFC62A1005B6ED6 /* CihiAudioRecordInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CihiAudioRecordInfoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,14 @@
 				030E25F91BEC669300059FBC /* CihiBottomView.m */,
 				0351F5651BECAD2900F7E968 /* CihiTextView.h */,
 				0351F5661BECAD2900F7E968 /* CihiTextView.m */,
+				032668C11BF194AE00F8F930 /* CihiBottomAudioView.h */,
+				032668C21BF194AE00F8F930 /* CihiBottomAudioView.m */,
+				032668C41BF194B800F8F930 /* CihiBottomFaceView.h */,
+				032668C51BF194B800F8F930 /* CihiBottomFaceView.m */,
+				032668C71BF194C300F8F930 /* CihiBottomAddtionView.h */,
+				032668C81BF194C300F8F930 /* CihiBottomAddtionView.m */,
+				03CE32C41BFC62A1005B6ED6 /* CihiAudioRecordInfoView.h */,
+				03CE32C51BFC62A1005B6ED6 /* CihiAudioRecordInfoView.m */,
 			);
 			path = chatbottom;
 			sourceTree = "<group>";
@@ -206,6 +226,10 @@
 			files = (
 				030E25E01BEC5F7100059FBC /* AppDelegate.m in Sources */,
 				030E25FA1BEC669300059FBC /* CihiBottomView.m in Sources */,
+				032668C31BF194AE00F8F930 /* CihiBottomAudioView.m in Sources */,
+				032668C91BF194C300F8F930 /* CihiBottomAddtionView.m in Sources */,
+				032668C61BF194B800F8F930 /* CihiBottomFaceView.m in Sources */,
+				03CE32C61BFC62A1005B6ED6 /* CihiAudioRecordInfoView.m in Sources */,
 				0351F5671BECAD2900F7E968 /* CihiTextView.m in Sources */,
 				030E25F71BEC60BB00059FBC /* ChatTableView.m in Sources */,
 				030E25DD1BEC5F7100059FBC /* main.m in Sources */,
