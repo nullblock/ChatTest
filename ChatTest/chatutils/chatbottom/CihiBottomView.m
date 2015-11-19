@@ -82,7 +82,7 @@
  *  @since  1.0
  ****************************************/
 - (void)addNotification {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
     //键盘显示隐藏通知注册
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -98,6 +98,14 @@
     NSValue *value = [dic objectForKey:UIKeyboardFrameBeginUserInfoKey];
     KEYBOARDHEIGHT = CGRectGetHeight(value.CGRectValue);
     self.frame = FRAME(0, height - selfHeight - KEYBOARDHEIGHT, width, selfHeight);
+    float autoheight     = KEYBOARDHEIGHT;
+    float showViewHeight = selfHeight + autoheight;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.frame         = FRAME(0, height - showViewHeight, width, showViewHeight);
+        _addtionView.frame = FRAME(0 , showViewHeight + height, width, CGRectGetHeight(_addtionView.frame));
+        _audioView.frame   = FRAME(0, showViewHeight + height, width, CGRectGetHeight(_audioView.frame));
+        _faceView.frame    = FRAME(0, showViewHeight + height, width, CGRectGetHeight(_faceView.frame));
+    }];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notifacation {
@@ -209,8 +217,9 @@
 - (void)showCihiBottomAdtion {
     if (_addtionView == nil) {
         _addtionView                 = [[CihiBottomAddtionView alloc]init];
-        _addtionView.backgroundColor = [UIColor cyanColor];
         _addtionView.control         = control;
+        [_addtionView setCustomBtnInfos];
+        [self.deleg setAddtionDelegate:_addtionView];
         [self addSubview:_addtionView];
     }
 
@@ -224,8 +233,8 @@
     [UIView animateWithDuration:0.25 animations:^{
         view1.frame = FRAME(0, height - showViewHeight, width, showViewHeight);
         view2.frame = FRAME(0 , selfHeight, width, autoheight);
-        view3.frame = FRAME(0, showViewHeight, width, CGRectGetHeight(view3.frame));
-        view4.frame = FRAME(0, showViewHeight, width, CGRectGetHeight(view4.frame));
+        view3.frame = FRAME(0, showViewHeight + height, width, CGRectGetHeight(view3.frame));
+        view4.frame = FRAME(0, showViewHeight + height, width, CGRectGetHeight(view4.frame));
     }];
 }
 //动画显示结束

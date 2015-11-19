@@ -40,7 +40,7 @@
  *  @since 1.0
  ****************************************/
 - (void)addAllScroller {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
     pressHoldOnRecord = [[CihiBottomAudioView alloc]init];
     pressHoldOnRecord.control = control;
     [pressHoldOnRecord addview];
@@ -52,7 +52,7 @@
     [tapOnRecord addTapPress];
     [tapOnRecord.labInfo setText:@"按下说话"];
     [tapOnRecord setFrame:CGRectMake(CGRectGetMaxX(pressHoldOnRecord.frame), 0, CGRectGetWidth(tapOnRecord.frame), CGRectGetHeight(tapOnRecord.frame))];
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
     _scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
     _scroll.pagingEnabled                  = YES;
     _scroll.bounces                        = NO;

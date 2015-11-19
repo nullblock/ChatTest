@@ -9,7 +9,7 @@
 #import "ChatViewController.h"
 
 
-@interface ChatViewController ()<CihiBottomAudioViewDelegate, CihiAudioRecordInfoViewDelegate, CihiBottomViewDelegate>
+@interface ChatViewController ()<CihiBottomAudioViewDelegate, CihiAudioRecordInfoViewDelegate, CihiBottomViewDelegate, CihiBottomAddtionViewDelegate>
 {
     CihiAudioRecordInfoView *audioRecordInfo;
     CihiBottomView *bottomview;
@@ -26,7 +26,7 @@
     
     [self.view addSubview:tableview];
     
-    bottomview = [[CihiBottomView alloc]initWithOutChat];
+    bottomview = [[CihiBottomView alloc]initWithChat];
     bottomview.deleg = self;
     bottomview.control = self;
     [self.view addSubview:bottomview];
@@ -34,11 +34,14 @@
     
 }
 
+#pragma mark --录音录制协议设置和实现
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setAudioDelegate:(CihiBottomAudioView *)audioView {
     audioView.pressHoldOnRecord.deleg = self;
     audioView.tapOnRecord.deleg = self;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 //开始录制 传送出来点击的手势
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)startRecordWithGesture:(UIGestureRecognizer *)gesture {
@@ -68,6 +71,36 @@
     [bottomview.audioView.tapOnRecord stopShowRedPoint];
 }
 
+#pragma mark --附加面板按钮点击事件的协议和实现
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setAddtionDelegate:(CihiBottomAddtionView *)addtionView {
+    addtionView.deleg = self;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//根据tag判断点击的是那个按钮，实现相应操作
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)addtionViewBtnClick:(BTNTAGVALUE)tag {
+    switch (tag) {
+        case PHOTOGRAPH:
+            
+            break;
+        case PHOTOALBUM:
+            
+            break;
+        case BURNSTATUS:
+            
+            break;
+        case LOCATION:
+            
+            break;
+        case GIFT:
+            
+            break;
+        default:
+            break;
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

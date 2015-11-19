@@ -27,6 +27,7 @@ typedef enum {
 @protocol CihiBottomViewDelegate
 
 - (void)setAudioDelegate:(CihiBottomAudioView *)_audioView;
+- (void)setAddtionDelegate:(CihiBottomAddtionView *)_addtionView;
 
 @end
 

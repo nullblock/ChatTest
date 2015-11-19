@@ -18,9 +18,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
-        h = CGRectGetHeight(frame);
     }
     return self;
+}
+
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    h = CGRectGetHeight(frame);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
